@@ -157,6 +157,7 @@
 #pragma mark -
 #pragma mark UIScrollView delegate methods
 
+
 - (void)scrollViewDidScroll:(UIScrollView *)aScrollView
 {
 	CGFloat pageWidth = scrollView.bounds.size.width ;
