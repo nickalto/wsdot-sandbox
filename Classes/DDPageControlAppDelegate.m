@@ -9,6 +9,7 @@
 #import "DDPageControlAppDelegate.h"
 #import "DDPageControlViewController.h"
 #import "APNavigationController.h"
+#import "LeftDemoViewController.h"
 
 @implementation DDPageControlAppDelegate
 
@@ -23,11 +24,22 @@
 {
     APNavigationController *frontViewController = [[APNavigationController alloc] initWithRootViewController:viewController ];
 	//[self.window addSubview: viewController.view] ;
-    self.window.rootViewController = frontViewController;
+    UIViewController *leftViewController = [[LeftDemoViewController alloc] init];
 
-	[self.window makeKeyAndVisible] ;
-	
-	return YES ;
+    self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController
+                                                                     leftViewController:leftViewController
+                                                                    rightViewController:nil
+                                                                                options:nil];
+    //frontViewController.navigationBarHidden = YES;
+    self.window.rootViewController = self.revealController;
+    [self.window makeKeyAndVisible];
+    return YES;
+
+//    self.window.rootViewController = frontViewController;
+//
+//    [self.window makeKeyAndVisible] ;
+//    
+//    return YES ;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

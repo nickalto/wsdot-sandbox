@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PKRevealController.h"
 
 @class DDPageControlViewController ;
 
@@ -18,6 +19,8 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window ;
 @property (nonatomic, retain) IBOutlet DDPageControlViewController *viewController ;
+@property (nonatomic, strong, readwrite) PKRevealController *revealController;
+
 
 
 @end

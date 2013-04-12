@@ -9,6 +9,7 @@
 #import "DDPageControlViewController.h"
 #import "DDPageControl.h"
 #import <QuartzCore/QuartzCore.h>
+#import "PKRevealController.h"
 
 #define ARC4RANDOM_MAX	0x100000000
 
@@ -178,7 +179,10 @@
 	[pageControl updateCurrentPageDisplay] ;
 }
 
-
+- (void)showLeftView:(id)sender
+{
+    [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
+}
 
 
 
